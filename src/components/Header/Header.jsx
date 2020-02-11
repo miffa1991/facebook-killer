@@ -1,11 +1,11 @@
 import React from 'react';
 // import { NavLink } from 'react-router-dom';
- import logo from './../../logo.svg';
+import logo from './../../logo.svg';
 import s from './Header.module.css';
 
 const Header = () => {
   return (
-    <div className="navbar navbar-expand-md navbar-light sticky-top nav-menu">
+    <div className={`${s['navbar']} ${s['navbar-expand-md']} ${s['navbar-light']} ${s['sticky-top']} ${s['nav-menu']}`}>
       <div className="row full-width">
         <div className="col-md-2 col-xs-12 p-left p-right">
           <div className="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle">
