@@ -1,0 +1,22 @@
+#content-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #000;
+}
+
+
+#content-wrapper .container-fluid {
+  padding: 30px 30px 30px 255px;
+}
+
+.pb-0 {
+  margin-bottom: 0px !important;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}

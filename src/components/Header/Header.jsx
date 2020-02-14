@@ -12,9 +12,10 @@ const Header = () => {
             <div className="menu-bar-icon">
             </div>
           </div>
-          <div className="logo">
-            <a href="index_1.html">	</a>
-            <img src={logo} alt="logo"></img>
+          <div className={s.logo} >
+            <a href="index_1.html">	
+            <img src={logo} alt="logo"></img> FaceBookKiller
+            </a>
           </div>
         </div>
         <div className="col-md-5 col-xs-12 p-left p-right">
