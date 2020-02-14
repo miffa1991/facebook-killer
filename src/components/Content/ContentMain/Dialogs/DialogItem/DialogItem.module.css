@@ -1,0 +1,82 @@
+.rightbox {
+  border: 1px solid #1b1b1b;
+  border-radius: 3px;
+  margin-bottom: 50px;
+  background: #1b1b1b;
+}
+
+.rightside {
+  position: relative;
+  left: 0px;
+  right: 0px;
+}
+
+.rightside img {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.rightside input[type='text'] {
+  padding: 20px 65px;
+  width: 100%;
+  border-bottom: 1px solid #000;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0;
+  font-size: 14px;
+  background: #1b1b1b;
+  color: #bdc3d3;
+}
+
+.rightmsg {
+  margin: 20px 15px;
+}
+
+.message-radius {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-top: 0px;
+  background-color: #e5e5e5;
+  float: left;
+}
+
+.message-radius img {
+  border-radius: 100%;
+}
+
+.message-heading {
+  font-size: 14px;
+  float: left;
+  color: #fff;
+  padding: 6px 5px;
+  font-weight: 500;
+}
+
+.message-heading p {
+  font-size: 13px;
+  padding-top: 7px;
+  font-weight: 400;
+  color: #bdc3d3;
+}
+
+.message-heading1 {
+  margin-top: 4px;
+  float: right;
+}
+
+.message-heading1 span {
+  font-size: 12px;
+  color: #bdc3d3;
+  font-weight: 500;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.8);
+}

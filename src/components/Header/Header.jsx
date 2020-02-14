@@ -83,7 +83,7 @@ const Header = () => {
                     </li>
                     <li>
                       <div className="dropdown-btn-mn">
-                        <button onclick="window.location.href = '#';">View All Messages</button>
+                        <button>View All Messages</button>
                       </div>
                     </li>
                   </ul>
@@ -131,7 +131,7 @@ const Header = () => {
                     </li>
                     <li>
                       <div className="dropdown-btn-mn">
-                        <button onclick="window.location.href = '#';">View All Notifications</button>
+                        <button >View All Notifications</button>
                       </div>
                     </li>
                   </ul>

@@ -1,10 +1,13 @@
 import React from 'react';
+import DialogItem from './DialogItem/DialogItem';
+import Messages from './Messages/Messages';
 
 
 const Dialogs = () => {
   return (
-    <div>
-      dialogs
+    <div className="row">
+      <DialogItem />
+      <Messages />
     </div>
   )
 }

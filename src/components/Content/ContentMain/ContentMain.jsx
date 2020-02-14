@@ -9,8 +9,8 @@ const ContentMain = () => {
   return (
       <div id={s['content-wrapper']}>
         <div className={`${s['container-fluid']} ${s['pb-0']}`}>
-          <Route path='/dialogs' component={Dialogs} />
-          <Route path='/profile' component={Profile} />
+          <Route path='/dialogs' render={ () => <Dialogs /> } />
+          <Route path='/profile' render={ () => <Profile /> } />
         </div>
       </div>
   )
