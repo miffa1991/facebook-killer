@@ -1,7 +1,31 @@
 import React from 'react';
 import s from './Messages.module.css';
 
-const Messages = () => {
+
+
+const MessageItem = (props) => {
+  return (
+    <div className={`${s['main-message-box']} ${s['ta-right']}`}>
+      <div className={`${s['message-dt']}`}>
+        <div className={s['message-inner-dt']}>
+          <p>{props.lastMessage}</p>
+        </div>
+        <span>{props.date}</span>
+      </div>
+    </div>
+  )
+}
+
+
+const Messages = (props) => {
+  let dialogsElement = props.dialogItem.map(d => <MessageItem name={d.name} id={d.id} lastMessage={d.lastMessage} date={d.date} />);
+  let newMessageChange = React.createRef();
+  let newMessage = () => props.newMessage();
+  let changeMessage = () => {
+    let text = newMessageChange.current.value;
+    props.updateNewPostText(text);
+  }
+
   return (
     <div className="col-lg-8 col-md-12 col-sm-12">
       <div className={s['main-conversation-box']}>
@@ -24,30 +48,7 @@ const Messages = () => {
             <div id="mCSB_1_container" className="mCSB_container">
               <div id="mCSB_1" className="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside"  >
                 <div id="mCSB_1_container" className="mCSB_container">
-                  <div className={`${s['main-message-box']}}`}>
-                    <div className={s['message-dt']}>
-                      <div className={s['message-inner-dt']}>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.</p>
-                      </div>
-                      <span>Sat, Aug 23, 1:08 PM</span>
-                    </div>
-                  </div>
-                  <div className={`${s['main-message-box']} ${s['ta-right']}`}>
-                    <div className={s['message-dt']}>
-                      <div className={s['message-inner-dt']}>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.</p>
-                      </div>
-                      <span>Sat, Aug 23, 1:08 PM</span>
-                    </div>
-                  </div>
-                  <div className={`${s['main-message-box']} ${s['st3']}`}>
-                    <div className={`${s['message-dt']} ${s['st3']} `}>
-                      <div className={s['message-inner-dt']}>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.</p>
-                      </div>
-                      <span>Sat, Aug 23, 1:08 PM</span>
-                    </div>
-                  </div>
+                  {dialogsElement}
                 </div>
                 <div id="mCSB_1_scrollbar_vertical" className="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" >
                   <div className={s['mCSB_draggerContainer']}>
@@ -70,12 +71,10 @@ const Messages = () => {
           </div>
         </div>
         <div className={s['message-send-area']}>
-          <form>
             <div className={s['mf-field']}>
-              <input type="text" name="message" placeholder="Type a message here"></input>
-              <button type="submit">Send</button>
+              <textarea onChange={changeMessage} ref={newMessageChange} value={props.newMessageText} />
+              <button onClick={newMessage}>Send</button>
             </div>
-          </form>
         </div>
       </div>
     </div>

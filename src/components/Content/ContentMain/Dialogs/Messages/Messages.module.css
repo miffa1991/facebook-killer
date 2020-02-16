@@ -296,3 +296,51 @@
   font-size: 13px;
   width: 60%;
 }
+
+.message-send-area {
+  float: left;
+  width: 100%;
+}
+
+.message-send-area {
+  float: left;
+  width: 100%;
+  background-color: #1b1b1b;
+  padding: 15px 20px 15px 20px;
+  border-top: 1px solid #000;
+}
+
+.mf-field {
+  float: left;
+  width: 100%;
+}
+
+.mf-field textarea {
+  float: left;
+  width: 84%;
+  background-color: #1b1b1b;
+  color: #bdc3d3;
+  font-size: 14px;
+  padding: 0 15px;
+  border-top: 0px;
+  border-left: 0px;
+  border-radius: 0;
+  border-right: 0px;
+  border-bottom: 1px solid #bdc3d3;
+  height: 45px;
+}
+
+.mf-field button {
+  float: left;
+  width: 13%;
+  background-color: #fa2276;
+  height: 45px;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  border: 0;
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-left: 15px;
+  cursor: pointer;
+}

@@ -5,13 +5,13 @@ import Sidebar from './Sidebar/Sidebar';
 
 
 
+const Content = (props) => {
 
-const Content = () => {
   return (
     <div className="full-width">
       <div id="wrapper">
         <Sidebar />
-        <ContentMain />
+        <ContentMain dialogItem={props.dialogItem} newMessage={props.newMessage} updateNewPostText={props.updateNewPostText} newMessageText={props.newMessageText}/>
       </div>
     </div>
   )

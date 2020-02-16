@@ -1,13 +1,14 @@
 import React from 'react';
-import DialogItem from './DialogItem/DialogItem';
+import DialogItems from './DialogItems/DialogItems';
 import Messages from './Messages/Messages';
 
 
-const Dialogs = () => {
+const Dialogs = (props) => {
+
   return (
     <div className="row">
-      <DialogItem />
-      <Messages />
+      <DialogItems dialogItem={props.dialogItem} />
+      <Messages newMessage={props.newMessage} dialogItem={props.dialogItem} updateNewPostText={props.updateNewPostText} newMessageText={props.newMessageText}/>
     </div>
   )
 }
