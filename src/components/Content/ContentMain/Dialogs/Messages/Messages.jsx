@@ -20,10 +20,13 @@ const MessageItem = (props) => {
 const Messages = (props) => {
   let dialogsElement = props.dialogItem.map(d => <MessageItem name={d.name} id={d.id} lastMessage={d.lastMessage} date={d.date} />);
   let newMessageChange = React.createRef();
-  let newMessage = () => props.newMessage();
+
+  let newMessage = () => props.dispatch({ type: 'NEW-MESSAGE' });
   let changeMessage = () => {
+    
     let text = newMessageChange.current.value;
-    props.updateNewPostText(text);
+    let action = { type: 'UPDATE-MESSAGE', newText: text };
+    props.dispatch(action);
   }
 
   return (
@@ -48,7 +51,7 @@ const Messages = (props) => {
             <div id="mCSB_1_container" className="mCSB_container">
               <div id="mCSB_1" className="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside"  >
                 <div id="mCSB_1_container" className="mCSB_container">
-                  {dialogsElement}
+                  { dialogsElement }
                 </div>
                 <div id="mCSB_1_scrollbar_vertical" className="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" >
                   <div className={s['mCSB_draggerContainer']}>

@@ -11,7 +11,7 @@ const Content = (props) => {
     <div className="full-width">
       <div id="wrapper">
         <Sidebar />
-        <ContentMain dialogItem={props.dialogItem} newMessage={props.newMessage} updateNewPostText={props.updateNewPostText} newMessageText={props.newMessageText}/>
+        <ContentMain dialogItem={props.dialogItem} newMessageText={props.newMessageText} dispatch={props.dispatch} />
       </div>
     </div>
   )

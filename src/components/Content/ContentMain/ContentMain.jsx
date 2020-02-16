@@ -10,7 +10,7 @@ const ContentMain = (props) => {
   return (
       <div id={s['content-wrapper']}>
         <div className={`${s['container-fluid']} ${s['pb-0']}`}>
-        <Route path='/dialogs' render={() => <Dialogs dialogItem={props.dialogItem} newMessage={props.newMessage} updateNewPostText={props.updateNewPostText} newMessageText={props.newMessageText}/> } />
+        <Route path='/dialogs' render={() => <Dialogs dialogItem={props.dialogItem} dispatch={props.dispatch} newMessageText={props.newMessageText}/> } />
       <Route path='/profile' render={ () => <Profile /> } />
         </div>
       </div>
