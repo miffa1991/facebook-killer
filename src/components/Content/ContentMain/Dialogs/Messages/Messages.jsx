@@ -1,33 +1,17 @@
 import React from 'react';
 import s from './Messages.module.css';
-
-
-
-const MessageItem = (props) => {
-  return (
-    <div className={`${s['main-message-box']} ${s['ta-right']}`}>
-      <div className={`${s['message-dt']}`}>
-        <div className={s['message-inner-dt']}>
-          <p>{props.lastMessage}</p>
-        </div>
-        <span>{props.date}</span>
-      </div>
-    </div>
-  )
-}
+import { newMessageActionCreator, updateNewMessageActionCreator} from './../../../../../redux/message-reducer';
+import MessageItem from './MessageItem/MessageItem';
 
 
 const Messages = (props) => {
-  let dialogsElement = props.dialogItem.map(d => <MessageItem name={d.name} id={d.id} lastMessage={d.lastMessage} date={d.date} />);
-  let newMessageChange = React.createRef();
-
-  let newMessage = () => props.dispatch({ type: 'NEW-MESSAGE' });
-  let changeMessage = () => {
-    
-    let text = newMessageChange.current.value;
-    let action = { type: 'UPDATE-MESSAGE', newText: text };
-    props.dispatch(action);
+  let dialogsElement = props.state.messageItem.map(d => <MessageItem name={d.name} id={d.id} lastMessage={d.lastMessage} date={d.date} />);
+  let newMessage = () => props.newMessage();
+  let changeMessage = (e) => {
+    let body = e.target.value;
+    props.changeMessage(body);
   }
+
 
   return (
     <div className="col-lg-8 col-md-12 col-sm-12">
@@ -75,7 +59,7 @@ const Messages = (props) => {
         </div>
         <div className={s['message-send-area']}>
             <div className={s['mf-field']}>
-              <textarea onChange={changeMessage} ref={newMessageChange} value={props.newMessageText} />
+              <textarea onChange={changeMessage} value={props.state.newMessageText} />
               <button onClick={newMessage}>Send</button>
             </div>
         </div>

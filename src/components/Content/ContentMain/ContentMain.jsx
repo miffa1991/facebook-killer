@@ -2,7 +2,7 @@ import React from 'react';
 import s from './ContentMain.module.css';
 import { Route } from 'react-router-dom';
 import Dialogs from './Dialogs/Dialogs';
-import Profile from './Profile/Profile';
+import ProfileContainer from './Profile/ProfileContainer';
 
 
 const ContentMain = (props) => {
@@ -10,8 +10,8 @@ const ContentMain = (props) => {
   return (
       <div id={s['content-wrapper']}>
         <div className={`${s['container-fluid']} ${s['pb-0']}`}>
-        <Route path='/dialogs' render={() => <Dialogs dialogItem={props.dialogItem} dispatch={props.dispatch} newMessageText={props.newMessageText}/> } />
-      <Route path='/profile' render={ () => <Profile /> } />
+        <Route path='/dialogs' render={() => <Dialogs /> } />
+        <Route path='/profile' render={() => <ProfileContainer /> } />
         </div>
       </div>
   )

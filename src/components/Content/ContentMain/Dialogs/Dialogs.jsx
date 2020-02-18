@@ -1,14 +1,14 @@
 import React from 'react';
 import DialogItems from './DialogItems/DialogItems';
-import Messages from './Messages/Messages';
-
+import MessagesContainer from './Messages/MessagesContainer';
+import DialogItemsContainer from './DialogItems/DialogItemsContainer';
 
 const Dialogs = (props) => {
 
   return (
     <div className="row">
-      <DialogItems dialogItem={props.dialogItem} />
-      <Messages dialogItem={props.dialogItem} newMessageText={props.newMessageText} dispatch={props.dispatch} />
+      <DialogItemsContainer />
+      <MessagesContainer />
     </div>
   )
 }

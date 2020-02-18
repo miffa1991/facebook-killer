@@ -11,7 +11,7 @@ const App = (props) => {
   return (
     <div className="App">
       <Header />
-      <Content dialogItem={props.state.dialogItem} newMessageText={props.state.newMessageText} dispatch={props.dispatch} />
+      <Content />
       <Footer />
     </div>
   );

@@ -20,12 +20,12 @@ const Header = () => {
         </div>
         <div className="col-md-5 col-xs-12 p-left p-right">
           <div className="searching">
-            <form>
+            <div>
               <button type="submit">
 
               </button>
-              <input type="text" name="search" placeholder="Search Places, Events, House, Shop, Bike, Car, Mobile etc..."></input>
-            </form>
+              <input type="text" name="search" placeholder="Search Places, Events, House, Shop, Bike, Car, Mobile etc..." />
+            </div>
           </div>
         </div>
         <div className="col-md-5 col-xs-12 p-left p-right">

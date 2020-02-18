@@ -1,0 +1,15 @@
+.mCSB_container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.mCSB_inside>.mCSB_container {
+  margin-right: 30px;
+}
+
+.mCSB_container {
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
