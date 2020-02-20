@@ -24,7 +24,7 @@ const messageReducer = (state = messageItems, action) => {
       };
       state.messageItem.push(newMessage);
       state.newMessageText = '';
-      return Object.assign({}, state);
+      return Object.assign({}, state); //or ...state and other object ...
     default:
       return Object.assign({}, state);
   }
