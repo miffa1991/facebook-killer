@@ -136,3 +136,28 @@
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
   cursor: pointer;
 }
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.pagination>div {
+  color: #ffffff;
+  font-weight: 500;
+  margin-right: 15px;
+  line-height: 36px;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+
+.pagination>div:hover {
+  cursor: pointer;
+}
+
+.activePage {
+  font-weight: 700;
+  background-color: #fa2276;
+}
