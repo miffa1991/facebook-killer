@@ -10,6 +10,11 @@ const Sidebar = () => {
           <div className={s.fos} id="foo"> Home </div>
         </NavLink>
       </li>
+      <li className={`${s['nav-item']} ${s.active}`}>
+        <NavLink to="/users">
+          <div className={s.fos} id="foo"> Users </div>
+        </NavLink>
+      </li>
       <li className={s['nav-item']}>
         <NavLink to="/dialogs">
           <div className={s.fos} id="foo3"> Messages </div>
