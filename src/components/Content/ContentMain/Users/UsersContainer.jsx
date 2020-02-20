@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     follow: (userId) => { dispatch(followAC(userId)) },
     unfollow: (userId) => { dispatch(unFollowAC(userId)) },
-    usersUpdate: (users) => { dispatch(usersAC(users))}
+    setUsers: (users) => { dispatch(usersAC(users))}
   }
 }
 const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users);
