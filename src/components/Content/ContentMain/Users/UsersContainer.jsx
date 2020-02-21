@@ -1,5 +1,5 @@
 import React from 'react';
-import { followAC, unFollowAC, usersAC, currentPageAC, userCountAC, toggleFetchingAC } from './../../../../redux/users-reducer';
+import { follow, unfollow, setUsers, currentPage, setUserCount, toggleFetching } from './../../../../redux/users-reducer';
 import Users from './Users';
 import { connect } from "react-redux";
 import * as axios from 'axios';
@@ -34,7 +34,6 @@ class UsersAPIComponent extends React.Component {
   }
 }
 
-
 const mapStateToProps = (state) => {
   return {
     users: state.usersPage.users, //usersPage - ключ редюсера який ми вказали в redux-store.js
@@ -45,17 +44,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    follow: (userId) => { dispatch(followAC(userId)) },
-    unfollow: (userId) => { dispatch(unFollowAC(userId)) },
-    setUsers: (users) => { dispatch(usersAC(users)) },
-    currentPage: (pageCurrent) => { dispatch(currentPageAC(pageCurrent)) },
-    setUserCount: (pageUserCount) => { dispatch(userCountAC(pageUserCount)) },
-    toggleFetching: (isFetching) => { dispatch(toggleFetchingAC(isFetching)) }
-  }
-}
-
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIComponent);
+const UsersContainer = connect(mapStateToProps, {
+  follow, unfollow, setUsers, currentPage, setUserCount, toggleFetching
+})(UsersAPIComponent);
 
 export default UsersContainer;
