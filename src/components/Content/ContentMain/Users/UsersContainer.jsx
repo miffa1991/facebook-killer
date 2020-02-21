@@ -1,40 +1,47 @@
 import React from 'react';
-import { followAC, unFollowAC, usersAC, currentPageAC, userCountAC } from './../../../../redux/users-reducer';
+import { followAC, unFollowAC, usersAC, currentPageAC, userCountAC, toggleFetchingAC } from './../../../../redux/users-reducer';
 import Users from './Users';
 import { connect } from "react-redux";
 import * as axios from 'axios';
+import Preloader from '../../../common/Preloader/Preloader';
 
 
 class UsersAPIComponent extends React.Component {
-
   componentDidMount() {
+    this.props.toggleFetching(true);
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.pageCurrent}&count=${this.props.pageLimit}`).then(response => {
       this.props.setUsers(response.data.items);
       this.props.setUserCount(response.data.totalCount);
+      this.props.toggleFetching(false);
     });
-    //this.props.pageUserCount = totalCount;
+    
   }
+
   changeCurrentPage = (pageNumber) => {
     this.props.currentPage(pageNumber);
+    this.props.toggleFetching(true);
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageLimit}`).then(response => {
       this.props.setUsers(response.data.items);
-
-
+      this.props.toggleFetching(false);
     });
   }
   render() {
-    return <Users pageUserCount={this.props.pageUserCount} pageLimit={this.props.pageLimit} pageCurrent={this.props.pageCurrent} users={this.props.users} changeCurrentPage={this.changeCurrentPage} unfollow ={this.props.unfollow}
+    return <>
+    {this.props.isFetching ? <Preloader /> : null}
+    <Users pageUserCount={this.props.pageUserCount} pageLimit={this.props.pageLimit} pageCurrent={this.props.pageCurrent} users={this.props.users} changeCurrentPage={this.changeCurrentPage} unfollow ={this.props.unfollow}
       follow={this.props.follow}/>
+      </>
   }
 }
 
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     users: state.usersPage.users, //usersPage - ключ редюсера який ми вказали в redux-store.js
     pageLimit: state.usersPage.pageLimit,
     pageUserCount: state.usersPage.pageUserCount,
-    pageCurrent: state.usersPage.pageCurrent
+    pageCurrent: state.usersPage.pageCurrent,
+    isFetching: state.usersPage.isFetching
   }
 }
 
@@ -44,7 +51,8 @@ const mapDispatchToProps = (dispatch) => {
     unfollow: (userId) => { dispatch(unFollowAC(userId)) },
     setUsers: (users) => { dispatch(usersAC(users)) },
     currentPage: (pageCurrent) => { dispatch(currentPageAC(pageCurrent)) },
-    setUserCount: (pageUserCount) => { dispatch(userCountAC(pageUserCount)) }
+    setUserCount: (pageUserCount) => { dispatch(userCountAC(pageUserCount)) },
+    toggleFetching: (isFetching) => { dispatch(toggleFetchingAC(isFetching)) }
   }
 }
 

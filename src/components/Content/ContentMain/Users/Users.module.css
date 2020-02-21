@@ -36,6 +36,42 @@
   border-top-right-radius: 3px;
 }
 
+.view-spinner {
+  width: 100%;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: .25em solid #fa2276;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: spinner-border .75s linear infinite;
+  animation: spinner-border .75s linear infinite;
+}
+
+.view-spinner span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #bdc3d3;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* user */
 
 .my-listing-dt-all-follow {
@@ -160,4 +196,10 @@
 .activePage {
   font-weight: 700;
   background-color: #fa2276;
+}
+
+.view-spinner {
+  width: 100%;
+  text-align: center;
+  margin: 50px 0;
 }

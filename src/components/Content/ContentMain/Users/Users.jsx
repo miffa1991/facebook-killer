@@ -16,7 +16,7 @@ const Users = (props) => {
     <div className={`${s['video-block']} ${s['section-padding']}`}>
       <div className={s.pagination}>
         {pages.map(p => {
-          return <div className={props.pageCurrent == p && s.activePage} onClick={() => { props.changeCurrentPage(p) }} >{p}</div>
+          return <div className={props.pageCurrent == p && s.activePage} onClick={ () => { props.changeCurrentPage(p) } } >{p}</div>
         })}
       </div>
       <div className={s['main-items']}>
