@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Profile.module.css';
 
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 
 
@@ -9,11 +10,13 @@ const Profile = (props) => {
   let newPost = () => props.newPost();
   let changePost = (e) => {
     let body = e.target.value;
-    props.changePost(body);
+    props.updatePost(body);
   }
-
+  debugger;
   return (
+    
     <div>
+      <ProfileInfo profilePage={props.profilePage} />
       <MyPosts postItems={props.postItems.postItem} />
       <div className={s['message-send-area']}>
         <div className={s['mf-field']}>

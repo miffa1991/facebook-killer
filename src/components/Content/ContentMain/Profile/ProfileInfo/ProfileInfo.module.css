@@ -1,0 +1,137 @@
+.profile-area-dashboard {
+  width: 100%;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  padding: 50px 0;
+  background: #1b1b1b;
+  margin-bottom: 50px;
+}
+
+.shapes-bg-big:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  opacity: 0.1;
+  /* background-image: url(../images/my_profile/shapes-big.png); */
+}
+
+.my-dash-profile {
+  position: relative;
+}
+
+.item-title-dashbd h4 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.item-title-dashbd p {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.my-dash-profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.add-dp {
+  margin: -16px;
+  padding: 0;
+}
+
+.add-dp input[type=file] {
+  opacity: 0;
+  padding: 10px 0px 9px;
+  display: none;
+}
+
+.add-dp i {
+  bottom: 0;
+  font-size: 14px;
+  box-shadow: none;
+  position: relative;
+  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  background: #fa2276;
+  padding: 10px;
+  color: #ffff;
+  left: 0;
+  top: -5px;
+}
+
+.profile-dashbd-dt {
+  width: 100%;
+  position: relative;
+}
+
+.item-title-dashbd {
+  margin-top: 20px;
+}
+
+h4 {
+  line-height: 1.22222222;
+}
+
+.item-title-dashbd p {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.item-title-dashbd span .fas {
+  color: #fa2276;
+  padding: 0;
+  margin: 0;
+  top: 0px;
+  left: -4px;
+  font-size: 14px;
+}
+
+.dashboard-main-dt {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.dashboard-main-dt li {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.lisitng-dtl ins {
+  display: block;
+  color: #ffff;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.lisitng-dtl span {
+  color: #bdc3d3;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.setting-btn {
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  border: 0;
+  font-size: 14px;
+  font-weight: 400;
+  background: #fa2276;
+  text-align: center;
+  border-radius: 3px;
+}

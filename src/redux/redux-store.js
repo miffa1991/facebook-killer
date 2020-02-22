@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from "redux";
-import postReducer from './post-reducer';
+import postReducer from './profile-reducer';
 import messageReducer from './message-reducer';
 import usersReducer from './users-reducer';
 
@@ -12,6 +12,6 @@ let reducersBox = combineReducers({
 let store = createStore(reducersBox);
 
 
-
+window.store = store;
 export default store;
 

@@ -7,14 +7,16 @@ import Preloader from '../../../common/Preloader/Preloader';
 
 
 class UsersAPIComponent extends React.Component {
+
   componentDidMount() {
+    debugger
     this.props.toggleFetching(true);
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.pageCurrent}&count=${this.props.pageLimit}`).then(response => {
       this.props.setUsers(response.data.items);
       this.props.setUserCount(response.data.totalCount);
       this.props.toggleFetching(false);
     });
-    
+
   }
 
   changeCurrentPage = (pageNumber) => {
@@ -27,11 +29,12 @@ class UsersAPIComponent extends React.Component {
   }
   render() {
     return <>
-    {this.props.isFetching ? <Preloader /> : null}
-    <Users pageUserCount={this.props.pageUserCount} pageLimit={this.props.pageLimit} pageCurrent={this.props.pageCurrent} users={this.props.users} changeCurrentPage={this.changeCurrentPage} unfollow ={this.props.unfollow}
-      follow={this.props.follow}/>
-      </>
+      {this.props.isFetching ? <Preloader /> : null}
+      <Users pageUserCount={this.props.pageUserCount} pageLimit={this.props.pageLimit} pageCurrent={this.props.pageCurrent} users={this.props.users} changeCurrentPage={this.changeCurrentPage} unfollow={this.props.unfollow}
+        follow={this.props.follow} />
+    </>
   }
+
 }
 
 const mapStateToProps = (state) => {
