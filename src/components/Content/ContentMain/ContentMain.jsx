@@ -13,7 +13,7 @@ const ContentMain = (props) => {
       <div className={`${s['container-fluid']} ${s['pb-0']}`}>
         <Route path='/users' render={() => <UsersContainer />} />
         <Route path='/dialogs' render={() => <Dialogs />} />
-        <Route path='/profile' render={() => <ProfileContainer />} />
+        <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
       </div>
     </div>
   )

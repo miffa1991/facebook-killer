@@ -3,17 +3,22 @@ import { newPost, updatePost, pageProfile  } from '../../../../redux/profile-red
 import Profile from './Profile';
 import { connect } from "react-redux";
 import * as axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 
 class ProfileAPIContainer extends React.Component {
 
   componentDidMount() {    
-    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`).then(response => {
+    let userId = this.props.match.params.userId;
+    if(!userId) {
+      userId = 2;
+    }
+  axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`).then(response => {
       debugger;
       this.props.pageProfile(response.data);
     });
   }
-  
+
   render() {
     return <Profile {...this.props} profilePage={this.props.profilePage} />
   }
@@ -26,7 +31,9 @@ const mapStateToProps = (state) => {
   }
 }
 
+const WithRouterProfileContainer = withRouter(ProfileAPIContainer);
+
 const ProfileContainer = connect(mapStateToProps, 
-  { newPost, updatePost, pageProfile  })(ProfileAPIContainer);
+  { newPost, updatePost, pageProfile })(WithRouterProfileContainer);
 
 export default ProfileContainer;

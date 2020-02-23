@@ -41,7 +41,7 @@ const Users = (props) => {
                 <div className={s['my-lisiting-picy']}>
                   <a href="#"> <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="" /></a>
                 </div>
-                <NavLink to="/profile/2"><h4>{u.name}</h4></NavLink>
+                <NavLink to={`/profile/${u.id}`} ><h4>{u.name}</h4></NavLink>
                 <p> <i className="fas fa-map-marker-alt"></i>{'u.location.country'} </p>
                 <div className={s['dashboard-main-dt-follow']}>
                   <ul>
