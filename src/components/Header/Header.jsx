@@ -2,8 +2,9 @@ import React from 'react';
 // import { NavLink } from 'react-router-dom';
 import logo from './../../logo.svg';
 import s from './Header.module.css';
+import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className={`${s['navbar']} ${s['navbar-expand-md']} ${s['navbar-light']} ${s['sticky-top']} ${s['nav-menu']}`}>
       <div className="row full-width">
@@ -14,12 +15,12 @@ const Header = () => {
           </div>
           <div className={s.logo} >
             <a href="index_1.html">	
-            <img src={logo} alt="logo"></img> FaceBookKiller
+            <img src={logo} alt="logo" /> FaceBookKiller
             </a>
           </div>
         </div>
         <div className="col-md-5 col-xs-12 p-left p-right">
-          <div className="searching">
+          <div className={s.searching}>
             <div>
               <button type="submit">
 
@@ -29,64 +30,21 @@ const Header = () => {
           </div>
         </div>
         <div className="col-md-5 col-xs-12 p-left p-right">
-          <div className="add-listing">
-            <a href="upload_listing.html">
+          <div className={s['add-listing']}>
+            <a href="#">
               Add Listing
             </a>
           </div>
-          <div className="home">
+          <div className={s.home}>
             <ul>
-              <li className="active">
+              <li className={s.active}>
                 <a href="index_1.html">
                   <span className="circle"></span>
                 </a>
               </li>
               <li className="popup dropdown">
                 <span>3</span>
-                <div className="dropdown-menu msg-noti-dropdown">
-                  <ul>
-                    <li className="notfication-details">
-                      <div className="media">
-                        <div className="media-left">
-                          <a href="#"></a>
-                        </div>
-                        <div className="media-body">
-                          <h4 className="media-heading color-primary">John Doe</h4>
-                          <p>Hello John, How are you?</p>
-                          <p className="comment-date">10 min ago</p>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="notfication-details">
-                      <div className="media">
-                        <div className="media-left">
-                          <a href="#"></a>
-                        </div>
-                        <div className="media-body">
-                          <h4 className="media-heading color-primary">John Doe</h4>
-                          <p>Hello John,What are doing?</p>
-                          <p className="comment-date">10 min ago</p>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="notfication-details">
-                      <div className="media">
-                        <div className="media-left">
-                          <a href="#"></a>
-                        </div>
-                        <div className="media-body">
-                          <h4 className="media-heading color-primary">John Doe</h4>
-                          <p>What you thing about my listing.</p>
-                          <p className="comment-date">10 min ago</p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="dropdown-btn-mn">
-                        <button>View All Messages</button>
-                      </div>
-                    </li>
-                  </ul>
+                <div className={`${s['dropdown-menu']} ${s['msg-noti-dropdown']}`}>
                 </div>
               </li>
               <li className="popup dropdown">
@@ -96,7 +54,7 @@ const Header = () => {
                     <li className="notfication-details">
                       <div className="media">
                         <div className="media-left">
-                          <a href="#"><img src="images/messages/msg-1.png" alt=""></img></a>
+                          <a href="#"><img src="images/messages/msg-1.png" alt=""/></a>
                         </div>
                         <div className="media-body">
                           <h4 className="media-heading color-primary">John Doe</h4>
@@ -139,36 +97,12 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="dropdown login">
-            <div className="account-dt dropdown-toggle-no-caret" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="main">
+          <div className={`${s.dropdown} ${s.login}`} >
+            <div className={`${s['account-dt']} ${s['dropdown-toggle-no-caret']}`} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="main">
               <i className="fas fa-user-circle"></i>
-              <span>John Deo</span>
+              <span>{props.isAutorizate ? props.login : <NavLink to={'/login'}>Login</NavLink>}</span>
             </div>
-            <div className="dropdown-menu dropdown-menu-right account-dropdown">
-              <ul>
-                <li>
-                  <a href="my_dashboard.html#dashboard">My Profile</a>
-                </li>
-                <li>
-                  <a href="messages.html">Messages</a>
-                </li>
-                <li>
-                  <a href="signin.html">Sign in</a>
-                </li>
-                <li>
-                  <a href="payment.html">Payment</a>
-                </li>
-                <li>
-                  <a href="help.html">Help</a>
-                </li>
-                <li>
-                  <a href="setting.html#overview">Setting</a>
-                </li>
-                <li>
-                  <a href="signin.html">Logout</a>
-                </li>
-              </ul>
-            </div>
+ 
           </div>
         </div>
       </div>

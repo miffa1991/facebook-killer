@@ -1,7 +1,7 @@
 import React from 'react';
 import User from './User/User';
 import s from './Users.module.css';
-
+import * as axios from 'axios';
 import userPhoto from './../../../../assets/img/user.jpeg';
 import { NavLink } from 'react-router-dom';
 
@@ -13,13 +13,10 @@ const Users = (props) => {
   for (let i = 1; i < pageCount; i++) {
     pages.push(i);
   }
+  debugger
   return (
     <div className={`${s['video-block']} ${s['section-padding']}`}>
-      <div className={s.pagination}>
-        {pages.map(p => {
-          return <div className={props.pageCurrent == p && s.activePage} onClick={ () => { props.changeCurrentPage(p) } } >{p}</div>
-        })}
-      </div>
+
       <div className={s['main-items']}>
         <div className="row justify-content-md-center">
           <div className={`${s.messages} text-center col-md-12`}>
@@ -36,7 +33,7 @@ const Users = (props) => {
         {/* <button onClick={this.getSettetsUsers}>addUsers</button> */}
         <div className={s['my-all-lisitngs']}>
           <div className="row">
-            { props.users.map(u => <div key={u.id} className="col-lg-3 col-sm-12">
+            {props.users.map(u => <div key={u.id} className="col-lg-3 col-sm-12">
               <div className={s['my-listing-dt-all-follow']}>
                 <div className={s['my-lisiting-picy']}>
                   <a href="#"> <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="" /></a>
@@ -65,7 +62,33 @@ const Users = (props) => {
                     </li>
                   </ul>
                 </div>
-                {u.followed ? <button className={s['folow-btn']} onClick={() => props.unfollow(u.id)}>Follow</button> : <button className={s['folow-btn']} onClick={() => props.follow(u.id)} >Unfollow</button>}
+                {u.followed ?
+                  <button className={s['folow-btn']} onClick={() => {
+                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                      withCredentials: true,
+                      headers: {
+                        'API-KEY': 'd2f5b007-0ccf-4ac0-acee-b03a552a8ba4'
+                      }
+                    },
+                    ).then(response => {
+                      if (response.data.resultCode === 0) {
+                        props.unfollow(u.id);
+                      }
+                    });
+                  }
+                  }>Follow</button> :
+                  <button className={s['folow-btn']} onClick={() => {
+                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                      withCredentials: true,
+                      headers: {
+                        'API-KEY': 'd2f5b007-0ccf-4ac0-acee-b03a552a8ba4'
+                      }
+                    }).then(response => {
+                      if (response.data.resultCode === 0) {
+                        props.follow(u.id);
+                      }
+                    });
+                  }}>Unfollow</button>}
               </div>
             </div>)}
           </div>
@@ -75,6 +98,11 @@ const Users = (props) => {
             <span className={s['sr-only']}>Loading...</span>
           </div>
         </div>
+      </div>
+      <div className={s.pagination}>
+        {pages.map(p => {
+          return <div className={props.pageCurrent == p && s.activePage} onClick={() => { props.changeCurrentPage(p) }} >{p}</div>
+        })}
       </div>
     </div>
   )

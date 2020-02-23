@@ -12,7 +12,7 @@ const Profile = (props) => {
     let body = e.target.value;
     props.updatePost(body);
   }
-  debugger;
+
   return (
     
     <div>

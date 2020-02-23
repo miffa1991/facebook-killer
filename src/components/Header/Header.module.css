@@ -23,6 +23,92 @@
   align-items: center;
 }
 
-.logo img{
+.logo img {
   height: 40px;
+}
+
+.searching {
+  padding: 24px 30px 23px 0px;
+}
+
+.searching button {
+  width: 10%;
+  border: 0px;
+  cursor: pointer;
+  background: transparent;
+  float: left;
+  line-height: 20px;
+}
+
+.searching input[type='text'] {
+  border: 0px;
+  line-height: 2;
+  background: transparent;
+  color: #bdc3d3 !important;
+  font-size: 12px !important;
+  width: 90%;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.add-listing {
+  padding: 25px 10px 25px 0px;
+  float: left;
+  margin-left: 0px !important;
+  margin-top: 3px;
+}
+
+.add-listing a {
+  padding: 10px 16px;
+  background: #f24f86;
+  border: 1px solid #fa2276;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  height: 34px;
+  font-weight: 400;
+}
+
+.add-listing img {
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.home {
+  width: 48%;
+  margin: 28px 0px 0px;
+  float: left;
+  text-align: right;
+}
+
+.home ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.home ul li {
+  float: left;
+  width: 27%;
+  position: relative;
+}
+
+.account-dt span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #bdc3d3;
+  margin-left: 10px;
+  line-height: 17px;
+  cursor: pointer;
+}
+
+.login {
+  padding: 27px 14px;
+  text-align: center;
+  width: 24%;
+  float: right;
+  background: #1b1b1b;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
 }

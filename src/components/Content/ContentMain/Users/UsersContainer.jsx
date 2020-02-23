@@ -9,9 +9,11 @@ import Preloader from '../../../common/Preloader/Preloader';
 class UsersAPIComponent extends React.Component {
 
   componentDidMount() {
-    debugger
+    
     this.props.toggleFetching(true);
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.pageCurrent}&count=${this.props.pageLimit}`).then(response => {
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.pageCurrent}&count=${this.props.pageLimit}`, {
+      withCredentials: true,
+    }).then(response => {
       this.props.setUsers(response.data.items);
       this.props.setUserCount(response.data.totalCount);
       this.props.toggleFetching(false);
@@ -22,7 +24,9 @@ class UsersAPIComponent extends React.Component {
   changeCurrentPage = (pageNumber) => {
     this.props.currentPage(pageNumber);
     this.props.toggleFetching(true);
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageLimit}`).then(response => {
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageLimit}`, {
+      withCredentials: true,
+    }).then(response => {
       this.props.setUsers(response.data.items);
       this.props.toggleFetching(false);
     });
