@@ -13,7 +13,7 @@ const Users = (props) => {
   for (let i = 1; i < pageCount; i++) {
     pages.push(i);
   }
-  debugger
+
   return (
     <div className={`${s['video-block']} ${s['section-padding']}`}>
 
