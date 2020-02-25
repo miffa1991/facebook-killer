@@ -1,3 +1,5 @@
+import { userAPI } from "../API/api";
+
 const NEW_POST = 'NEW-POST';
 const UPDATE_POST = 'UPDATE-POST';
 const PROFILE_PAGE = 'PROFILE_PAGE'; 
@@ -42,6 +44,14 @@ export const updatePost = (textPost) => {
 }
 export const pageProfile = (profilePage) => {
   return { type: PROFILE_PAGE, profilePage };
+}
+
+export const getProfile = (userId) => {
+  return (dispatch) => {
+    userAPI.getProfile(userId).then(data => {
+      dispatch(pageProfile(data));
+    });
+  }
 }
 
 export default postReducer;

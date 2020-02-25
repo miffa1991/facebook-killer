@@ -20,14 +20,10 @@ export const userAPI = {
     });
   },
   getFollow(userId) {
-    return instance.delete(`follow/${userId}`).then(response => {
-      return response.data;
-    });
+    return instance.post(`follow/${userId}`);
   },
   getUnFollow(userId) {
-    return instance.post(`follow/${userId}`,{}).then(response => {
-      return response.data;
-    });
+    return instance.delete(`follow/${userId}`);
   },
   getAuth() {
     return instance.get(`auth/me`).then(response => {
