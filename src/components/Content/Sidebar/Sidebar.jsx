@@ -22,8 +22,8 @@ const Sidebar = () => {
       </li>
       <li className="dropdown-divider"></li>
       <li className={s['nav-item']}>
-        <NavLink to="help.html">
-          <div className={s.fos} id="foo8"> Help</div>
+        <NavLink to="/login">
+          <div className={s.fos} id="foo8"> Login</div>
         </NavLink>
       </li>
       <li className={s['nav-item']}>
