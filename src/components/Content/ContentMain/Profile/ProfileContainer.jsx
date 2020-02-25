@@ -1,5 +1,5 @@
 import React from 'react';
-import { newPost, updatePost, pageProfile, getProfile  } from '../../../../redux/profile-reducer';
+import { newPost, updatePost, getProfile  } from '../../../../redux/profile-reducer';
 import Profile from './Profile';
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
@@ -31,6 +31,6 @@ const mapStateToProps = (state) => {
 const WithRouterProfileContainer = withRouter(ProfileAPIContainer);
 
 const ProfileContainer = connect(mapStateToProps, 
-  { newPost, updatePost, pageProfile, getProfile })(WithRouterProfileContainer);
+  { newPost, updatePost, getProfile })(WithRouterProfileContainer);
 
 export default ProfileContainer;
