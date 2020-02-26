@@ -4,8 +4,7 @@ import Profile from './Profile';
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
 import { withAuthRedirect } from '../../../../hoc/withAutHogRedirect';
-
-
+import { compose } from 'redux';
 
 class ProfileAPIContainer extends React.Component {
 
@@ -18,7 +17,6 @@ class ProfileAPIContainer extends React.Component {
   }
 
   render() {
-    
     return <Profile {...this.props} profilePage={this.props.profilePage} />
   }
 }
@@ -30,9 +28,11 @@ const mapStateToProps = (state) => {
     auth: state.loginReducer.isAutorizate
   }
 }
-const WithWrapper = withAuthRedirect(ProfileAPIContainer);
-const WithRouterProfileContainer = withRouter(WithWrapper);
-const ProfileContainer = connect(mapStateToProps, 
-  { newPost, updatePost, getProfile })(WithRouterProfileContainer);
 
-export default ProfileContainer;
+
+export default compose(
+  withRouter,
+  withAuthRedirect,
+  connect(mapStateToProps,
+    { newPost, updatePost, getProfile })
+)(ProfileAPIContainer);
