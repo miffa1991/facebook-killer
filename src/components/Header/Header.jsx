@@ -1,5 +1,4 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
 import logo from './../../logo.svg';
 import s from './Header.module.css';
 import { NavLink } from 'react-router-dom';
@@ -23,7 +22,6 @@ const Header = (props) => {
           <div className={s.searching}>
             <div>
               <button type="submit">
-
               </button>
               <input type="text" name="search" placeholder="Search Places, Events, House, Shop, Bike, Car, Mobile etc..." />
             </div>
@@ -102,7 +100,6 @@ const Header = (props) => {
               <i className="fas fa-user-circle"></i>
               <span>{props.isAutorizate ? props.login : <NavLink to={'/login'}>Login</NavLink>}</span>
             </div>
- 
           </div>
         </div>
       </div>

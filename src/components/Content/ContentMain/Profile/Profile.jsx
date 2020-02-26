@@ -1,9 +1,7 @@
 import React from 'react';
 import s from './Profile.module.css';
-
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
-import { Redirect } from 'react-router-dom';
 
 
 
@@ -13,7 +11,7 @@ const Profile = (props) => {
     let body = e.target.value;
     props.updatePost(body);
   }
-  if (!props.auth) return <Redirect to={'/login'} />  
+
   return (
     
     <div>
