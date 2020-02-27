@@ -1,5 +1,5 @@
 import React from 'react';
-import { newPost, updatePost, getProfile  } from '../../../../redux/profile-reducer';
+import { newPost, updatePost, getProfile, getStatus, updateStatus  } from '../../../../redux/profile-reducer';
 import Profile from './Profile';
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
@@ -11,13 +11,15 @@ class ProfileAPIContainer extends React.Component {
   componentDidMount() {  
     let userId = this.props.match.params.userId;
     if(!userId) {
-      userId = 2;
+      userId = this.props.userId;
     }
     this.props.getProfile(userId);
+    this.props.getStatus(userId);
+    
   }
 
   render() {
-    return <Profile {...this.props} profilePage={this.props.profilePage} />
+    return <Profile {...this.props} profilePage={this.props.profilePage} status={this.props.status} updateStatus={this.props.updateStatus} />
   }
 }
 
@@ -25,7 +27,9 @@ const mapStateToProps = (state) => {
   return {
     postItems: state.postItems,
     profilePage: state.postItems.profilePage,
-    auth: state.loginReducer.isAutorizate
+    auth: state.loginReducer.isAutorizate,
+    status: state.postItems.status,
+    userId: state.postItems.pageIdUser
   }
 }
 
@@ -34,5 +38,5 @@ export default compose(
   withRouter,
   withAuthRedirect,
   connect(mapStateToProps,
-    { newPost, updatePost, getProfile })
+    { newPost, updatePost, getProfile, getStatus, updateStatus })
 )(ProfileAPIContainer);

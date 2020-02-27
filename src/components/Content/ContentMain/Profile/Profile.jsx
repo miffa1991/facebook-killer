@@ -15,7 +15,7 @@ const Profile = (props) => {
   return (
     
     <div>
-      <ProfileInfo profilePage={props.profilePage} />
+      <ProfileInfo profilePage={props.profilePage} status={props.status} updateStatus={props.updateStatus} />
       <MyPosts postItems={props.postItems.postItem} />
       <div className={s['message-send-area']}>
         <div className={s['mf-field']}>

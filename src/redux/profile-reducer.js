@@ -1,8 +1,10 @@
-import { userAPI } from "../API/api";
+import { userAPI, profileAPI } from "../API/api";
 
 const NEW_POST = 'NEW-POST';
 const UPDATE_POST = 'UPDATE-POST';
 const PROFILE_PAGE = 'PROFILE_PAGE'; 
+const STATUS_PROFILE = 'STATUS_PROFILE'; 
+const STATUS_UPDATE_PROFILE = 'STATUS_UPDATE_PROFILE'; 
 
 let postItems = {
   postItem: [
@@ -12,7 +14,8 @@ let postItems = {
   ],
   newPostText: '',
   profilePage: null,
-  pageIdUser:2
+  pageIdUser: 6084,
+  status: ''
 };
 
 const postReducer = (state = postItems, action) => {
@@ -32,6 +35,8 @@ const postReducer = (state = postItems, action) => {
       return {...state};
     case PROFILE_PAGE:
       return { ...state, profilePage: action.profilePage };
+    case STATUS_PROFILE:
+      return { ...state, status: action.status };
     default:
       return {...state};
   }
@@ -46,6 +51,11 @@ export const pageProfile = (profilePage) => {
   return { type: PROFILE_PAGE, profilePage };
 }
 
+export const setStatus = (status) => {
+  return { type: STATUS_PROFILE, status: status };
+}
+
+
 export const getProfile = (userId) => {
   return (dispatch) => {
     userAPI.getProfile(userId).then(data => {
@@ -53,5 +63,27 @@ export const getProfile = (userId) => {
     });
   }
 }
+
+export const getStatus = (userId) => {
+  return (dispatch) => {
+    profileAPI.getStatus(userId).then(data => {
+      dispatch(setStatus(data));
+    });
+  }
+}
+
+export const updateStatus = (status) => {
+  return (dispatch) => {
+    profileAPI.updateStatus(status).then(response => {
+      if (response.data.resultCode === 0) {
+        dispatch(setStatus(status));
+      }
+    });
+  }
+}
+
+
+
+
 
 export default postReducer;

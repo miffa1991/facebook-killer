@@ -4,32 +4,46 @@ import React from 'react';
 class PropfileStatusContainer extends React.Component {
 
   state = {
-    editMode: false
+    editMode: false,
+    status: this.props.status
   }
 
-  activeEdit() {
+  activeEdit = () => {
     this.setState({
       editMode: true
     })
   }
 
-  deactiveEdit() {
+  deactiveEdit = () => {
     this.setState({
       editMode: false
-    })
+    });
+    this.props.updateStatus(this.state.status)
   }
 
+  onChangeStatus = (e) => {
+    this.setState({
+      status: e.currentTarget.value
+    });
+  }
+  componentDidUpdate(prevProps){
+    if (prevProps.status !== this.props.status) {
+    this.setState({
+      status: this.props.status
+    });
+  }
+}
   render() {
     debugger
     return (
       <div>
         {!this.state.editMode &&
-          <div >
-          <span onClick={this.activeEdit.bind(this)}>{this.props.status}</span>
+          <div>
+            <span onClick={this.activeEdit}>{this.props.status || '-----'}</span>
           </div>}
         {this.state.editMode &&
           <div>
-            <input autoFocus={true} onBlur={this.deactiveEdit.bind(this)} value={this.props.status} />
+            <input onChange={this.onChangeStatus} autoFocus={true} onBlur={this.deactiveEdit} value={this.state.status} />
           </div>
         }
       </div>
