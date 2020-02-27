@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from '../../../../common/Preloader/Preloader';
+import PropfileStatusContainer from './ProfileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -23,6 +24,7 @@ return (
         <div className={s['profile-dashbd-dt']}>
           <div className={s['item-title-dashbd']}>
             <h4> {props.profilePage.fullName} </h4>
+            <h5><PropfileStatusContainer status={'Hello'} /></h5>
             {/* <p><span><i className={`${s.fas} ${s['fa-map-marker-alt']}`}></i></span> Paris </p> */}
           </div>
           <div className={s['dashboard-main-dt']}>
