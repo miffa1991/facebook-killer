@@ -31,6 +31,7 @@ const mapStateToProps = (state) => {
     status: state.postItems.status,
     userId: state.postItems.pageIdUser
   }
+  
 }
 
 

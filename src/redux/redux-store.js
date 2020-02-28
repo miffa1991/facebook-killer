@@ -4,13 +4,14 @@ import postReducer from './profile-reducer';
 import messageReducer from './message-reducer';
 import usersReducer from './users-reducer';
 import loginReducer from './login-reducer';
-
+import { reducer as formReducer } from 'redux-form'
 
 let reducersBox = combineReducers({
   postItems: postReducer,
   messageItems: messageReducer,
   usersPage: usersReducer,
-  loginReducer: loginReducer
+  loginReducer: loginReducer,
+  form: formReducer
 });
 
 let store = createStore(reducersBox, applyMiddleware(thunkMiddleware));
