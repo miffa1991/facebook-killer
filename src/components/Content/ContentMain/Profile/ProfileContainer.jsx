@@ -1,5 +1,5 @@
 import React from 'react';
-import { newPost, updatePost, getProfile, getStatus, updateStatus  } from '../../../../redux/profile-reducer';
+import { newPost, getProfile, getStatus, updateStatus  } from '../../../../redux/profile-reducer';
 import Profile from './Profile';
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
@@ -39,5 +39,5 @@ export default compose(
   withRouter,
   withAuthRedirect,
   connect(mapStateToProps,
-    { newPost, updatePost, getProfile, getStatus, updateStatus })
+    { newPost, getProfile, getStatus, updateStatus })
 )(ProfileAPIContainer);

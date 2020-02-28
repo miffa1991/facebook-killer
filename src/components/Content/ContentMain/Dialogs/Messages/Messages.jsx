@@ -1,18 +1,32 @@
 import React from 'react';
 import s from './Messages.module.css';
-import { newMessageActionCreator, updateNewMessageActionCreator} from './../../../../../redux/message-reducer';
 import MessageItem from './MessageItem/MessageItem';
+import { Field, reduxForm } from 'redux-form';
+
+
+const MessageForm = (props) => {
+
+  return (
+    <form onSubmit={props.handleSubmit} className={s['mf-field']}>
+      <Field name={'message'} component={'textarea'}  value={props.state.newMessageText} />
+      <button>Send</button>
+    </form>
+  )
+}
+
+const MessageRedaxFrorm = reduxForm({
+  // a unique name for the form
+  form: 'message'
+})(MessageForm);
 
 
 const Messages = (props) => {
-  let dialogsElement = props.state.messageItem.map(d => <MessageItem name={d.name} id={d.id} lastMessage={d.lastMessage} date={d.date} />);
-  let newMessage = () => props.newMessage();
-  let changeMessage = (e) => {
-    let body = e.target.value;
-    props.changeMessage(body);
+
+  let submitMessage = (values) => {
+    props.newMessage(values.message);
+    //alert(values.message);
   }
-
-
+  let dialogsElement = props.state.messageItem.map(d => <MessageItem name={d.name} id={d.id} lastMessage={d.lastMessage} date={d.date} />);
   return (
     <div className="col-lg-8 col-md-12 col-sm-12">
       <div className={s['main-conversation-box']}>
@@ -35,7 +49,7 @@ const Messages = (props) => {
             <div id="mCSB_1_container" className="mCSB_container">
               <div id="mCSB_1" className="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside"  >
                 <div id="mCSB_1_container" className="mCSB_container">
-                  { dialogsElement }
+                  {dialogsElement}
                 </div>
                 <div id="mCSB_1_scrollbar_vertical" className="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" >
                   <div className={s['mCSB_draggerContainer']}>
@@ -57,11 +71,8 @@ const Messages = (props) => {
             </div>
           </div>
         </div>
-        <div className={s['message-send-area']}>
-            <div className={s['mf-field']}>
-              <textarea onChange={changeMessage} value={props.state.newMessageText} />
-              <button onClick={newMessage}>Send</button>
-            </div>
+        <div className={s['message-send-area']}>  
+            <MessageRedaxFrorm state={props.state} onSubmit={submitMessage} />
         </div>
       </div>
     </div>

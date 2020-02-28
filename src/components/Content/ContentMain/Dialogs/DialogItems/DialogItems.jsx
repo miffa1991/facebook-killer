@@ -6,7 +6,7 @@ import DialogItem from './DialogsItem/DialogItem';
 const DialogItems = (props) => {
 
   let state = props.state;
-  let dialogsElement = state.messageItem.map(d => <DialogItem name={d.name} id={d.id} lastMessage={d.lastMessage} date={d.date} />);
+  let dialogsElement = state.messageItem.map(d => <DialogItem key={d.id} name={d.name} id={d.id} lastMessage={d.lastMessage} date={d.date} />);
   
   return (
     <div className="col-lg-4 msg col-sm-12">

@@ -2,26 +2,34 @@ import React from 'react';
 import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
+import { Field, reduxForm } from 'redux-form';
 
 
+const AddPost = (props) => {
+
+  return (
+    <form onSubmit={props.handleSubmit} className={s['mf-field']}>
+      <Field placeholder={'add post'} name={'post'} component={'textarea'}  />
+      <button>Add post</button>
+    </form>
+  )
+}
+const AddPostRedaxForm = reduxForm({
+  // a unique name for the form
+  form: 'addPost'
+})(AddPost);
 
 const Profile = (props) => {
-  let newPost = () => props.newPost();
-  let changePost = (e) => {
-    let body = e.target.value;
-    props.updatePost(body);
+  let submitPost = (values) =>{
+    props.newPost(values.post);
   }
-
   return (
     
     <div>
       <ProfileInfo profilePage={props.profilePage} status={props.status} updateStatus={props.updateStatus} />
       <MyPosts postItems={props.postItems.postItem} />
       <div className={s['message-send-area']}>
-        <div className={s['mf-field']}>
-          <textarea onChange={changePost} value={props.postItems.newPostText} />
-          <button onClick={newPost}>Add post</button>
-        </div>
+        <AddPostRedaxForm onSubmit={submitPost} />
       </div>
     </div>
   )

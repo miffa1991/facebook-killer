@@ -38,16 +38,21 @@ export const profileAPI = {
     });
   },
   updateStatus(status) {
-    return instance.put(`profile/status/`, {status: status});
+    return instance.put(`profile/status/`, { status: status });
   },
 
 }
 
 
 export const authAPI = {
-me(){
+  me() {
     return instance.get(`auth/me`).then(response => {
       return response.data;
     });
-}
+  },
+  login() {
+    return instance.post(`/auth/login`).then(response => {
+      return response.data;
+    })
+  }
 }
