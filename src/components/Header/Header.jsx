@@ -4,6 +4,7 @@ import s from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
+  debugger
   return (
     <div className={`${s['navbar']} ${s['navbar-expand-md']} ${s['navbar-light']} ${s['sticky-top']} ${s['nav-menu']}`}>
       <div className="row full-width">
@@ -98,7 +99,9 @@ const Header = (props) => {
           <div className={`${s.dropdown} ${s.login}`} >
             <div className={`${s['account-dt']} ${s['dropdown-toggle-no-caret']}`} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="main">
               <i className="fas fa-user-circle"></i>
-              <span>{props.isAutorizate ? props.login : <NavLink to={'/login'}>Login</NavLink>}</span>
+              <span>{props.isAutorizate 
+                ? <div> {props.login} <button onClick={props.logout}>logout</button></div>
+              : <NavLink to={'/login'}>Login</NavLink>}</span>
             </div>
           </div>
         </div>
