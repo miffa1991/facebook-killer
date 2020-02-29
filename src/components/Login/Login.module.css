@@ -1,0 +1,127 @@
+.sign {
+  /* background-image: url(../images/background.jpg); */
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px 0px;
+  height: 100%;
+}
+
+.bg-form {
+  background: #1b1b1b;
+  padding: 30px;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.sings {
+  text-align: right;
+  padding-top: 0px;
+}
+
+.sings a {
+  color: #bdc3d3;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 9px;
+}
+
+.sform {
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 0px 100px;
+  text-align: center;
+}
+
+.sform h1 {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 23px;
+  font-weight: 500;
+}
+
+.sform span {
+  font-size: 14px;
+  color: #bdc3d3;
+  font-weight: 400;
+}
+
+.sinup {
+  margin-top: 50px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container .input-field {
+  border-bottom: 1px solid #343434;
+  width: 100%;
+  background: transparent;
+  border-top: 0px;
+  border-right: 0px;
+  padding: 15px;
+  margin-bottom: 30px;
+  border-left: 0px;
+  color: #bdc3d3;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.sinup .btn {
+  background: #fa2276;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-top: 20px;
+  border: 1px solid #fa2276;
+}
+
+.forgets {
+  margin-top: 30px;
+}
+
+.forgets a {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #bdc3d3;
+}
+
+.footer-sign {
+  margin: 0 0 15px;
+}
+
+.footer-sign .footermenu {
+  padding: 0px;
+  margin: 0px;
+}
+
+.footer-sign .footermenu ul {
+  margin: 0px;
+  list-style: none;
+}
+
+.footer-sign .footermenu ul li {
+  display: inline;
+  border-right: 1px solid #343434;
+}
+
+.footer-sign .footermenu ul li a {
+  color: #bdc3d3;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0px 6px;
+}
+
+.footer-sign .copyrightsign, .footer-sign .copyrightsign a {
+  color: #bdc3d3;
+  font-size: 12px;
+  margin-top: 3px;
+  text-align: right;
+}
