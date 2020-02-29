@@ -15,6 +15,7 @@ const LoginForm = (props) => {
       <div><Field placeholder={'Email'} validate={[require, maxLength20]} name={'email'} component={Input} /></div>
       <div><Field placeholder={'Password'} name={'password'} type={'password'} validate={[require, maxLength36]} component={Input} /></div>
       <div><Field type={'checkbox'} name={'rememberMe'} validate={[require]} component={Input} /> remember me</div>
+      {props.error && <div className={'errorSummer'}>{props.error}</div>}
       <button>Send</button>
     </form>
   )
