@@ -28,10 +28,8 @@ export const setDataUser = (id, email, login, isAutorizate) => ({ type: SET_LOGI
 
 
 
-export const getAuth = () => {
-
-  return (dispatch) => {
-    authAPI.me().then(data => {
+export const getAuth = () => (dispatch) => {
+   return authAPI.me().then(data => {
       if (data.resultCode === 0) {
         let { id, login, email } = data.data;
         dispatch(setDataUser(id, email, login, true));
@@ -39,7 +37,7 @@ export const getAuth = () => {
 
     });
   }
-}
+
 
 export const login = (login, email, rememberMe, isAutorizate) => {
 

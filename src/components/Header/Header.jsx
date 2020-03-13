@@ -4,7 +4,7 @@ import s from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
-  debugger
+ 
   return (
     <div className={`${s['navbar']} ${s['navbar-expand-md']} ${s['navbar-light']} ${s['sticky-top']} ${s['nav-menu']}`}>
       <div className="row full-width">

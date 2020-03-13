@@ -4,6 +4,7 @@ import postReducer from './profile-reducer';
 import messageReducer from './message-reducer';
 import usersReducer from './users-reducer';
 import loginReducer from './login-reducer';
+import app from './app-reducer';
 import { reducer as formReducer } from 'redux-form'
 
 let reducersBox = combineReducers({
@@ -11,6 +12,7 @@ let reducersBox = combineReducers({
   messageItems: messageReducer,
   usersPage: usersReducer,
   loginReducer: loginReducer,
+	app:app,
   form: formReducer
 });
 
