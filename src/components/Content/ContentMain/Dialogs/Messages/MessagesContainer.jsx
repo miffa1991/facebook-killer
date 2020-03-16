@@ -7,21 +7,21 @@ import { compose } from 'redux';
 
 
 const mapStateToProps = (state) => {
-  return {
-    state: state.messageItems,
-  }
+	return {
+		state: state.messageItems,
+	}
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    newMessage: (text) => { dispatch(newMessageActionCreator(text)) }
-  }
+	return {
+		newMessage: (text) => { dispatch(newMessageActionCreator(text)) }
+	}
 }
 
 
 export default compose(
-  withAuthRedirect,
-  connect(mapStateToProps, mapDispatchToProps)
+	withAuthRedirect,
+	connect(mapStateToProps, mapDispatchToProps)
 )(Messages);
 
 
