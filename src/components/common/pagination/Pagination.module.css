@@ -1,0 +1,25 @@
+.pagination {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	margin-top: 30px;
+}
+
+.pagination>div {
+	color: #ffffff;
+	font-weight: 500;
+	margin-right: 15px;
+	line-height: 36px;
+	height: 36px;
+	width: 36px;
+	border-radius: 50%;
+}
+
+.pagination>div:hover {
+	cursor: pointer;
+}
+
+.activePage {
+	font-weight: 700;
+	background-color: #fa2276;
+}

@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import postReducer from './profile-reducer';
 import messageReducer from './message-reducer';
@@ -8,15 +8,22 @@ import app from './app-reducer';
 import { reducer as formReducer } from 'redux-form'
 
 let reducersBox = combineReducers({
-  postItems: postReducer,
-  messageItems: messageReducer,
-  usersPage: usersReducer,
-  loginReducer: loginReducer,
-	app:app,
-  form: formReducer
+	postItems: postReducer,
+	messageItems: messageReducer,
+	usersPage: usersReducer,
+	loginReducer: loginReducer,
+	app: app,
+	form: formReducer
 });
 
-let store = createStore(reducersBox, applyMiddleware(thunkMiddleware));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+//настройка расширения для хрома
+
+const store = createStore(reducersBox, composeEnhancers(
+	applyMiddleware(thunkMiddleware))
+);
+
+
 
 
 window.store = store;
