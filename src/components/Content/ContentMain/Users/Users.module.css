@@ -173,11 +173,6 @@
 	cursor: pointer;
 }
 
-.activePage {
-	font-weight: 700;
-	background-color: #fa2276;
-}
-
 .view-spinner {
 	width: 100%;
 	text-align: center;
