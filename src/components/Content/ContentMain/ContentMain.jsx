@@ -1,24 +1,31 @@
 import React from 'react';
 import s from './ContentMain.module.css';
 import { Route } from 'react-router-dom';
-import Dialogs from './Dialogs/Dialogs';
-import ProfileContainer from './Profile/ProfileContainer';
-import UsersContainer from './Users/UsersContainer';
-import Login from '../../Login/Login';
 
+import Preloader from '../../common/Preloader/Preloader';
+
+
+const UsersContainer = React.lazy(() => import('./Users/UsersContainer'));
+const Login = React.lazy(() => import('../../Login/Login'));
+const ProfileContainer = React.lazy(() => import('./Profile/ProfileContainer'));
+const Dialogs = React.lazy(() => import('./Dialogs/Dialogs'));
 
 const ContentMain = (props) => {
 
-  return (
-    <div id={s['content-wrapper']}>
-      <div className={`${s['container-fluid']} ${s['pb-0']}`}>
-        <Route path='/users' render={() => <UsersContainer />} />
-        <Route path='/dialogs' render={() => <Dialogs />} />
-        <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
-        <Route path='/login' render={() => <Login />} />
-      </div>
-    </div>
-  )
+	return (
+		<div id={s['content-wrapper']}>
+			<div className={`${s['container-fluid']} ${s['pb-0']}`}>
+				<Route path='/users' render={() => {
+					return <React.Suspense fallback={<Preloader />}> <UsersContainer />  </React.Suspense>
+				}} />
+				<Route path='/dialogs' render={() => { return <React.Suspense fallback={<Preloader />}> <Dialogs />   </React.Suspense> }} />
+				<Route path='/profile/:userId?' render={() => {
+					return <React.Suspense fallback={<Preloader />}> <ProfileContainer />  </React.Suspense>
+				}} />
+				<Route path='/login' render={() => { return <React.Suspense fallback={<Preloader />}> <Login />  </React.Suspense> }} />
+			</div>
+		</div>
+	)
 }
 
 
