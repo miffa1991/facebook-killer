@@ -1,0 +1,43 @@
+{
+  "files": {
+    "static/js/0.d78c372e.chunk.js": "/facebook-killer/static/js/0.d78c372e.chunk.js",
+    "static/js/0.d78c372e.chunk.js.map": "/facebook-killer/static/js/0.d78c372e.chunk.js.map",
+    "main.css": "/facebook-killer/static/css/main.150f7847.chunk.css",
+    "main.js": "/facebook-killer/static/js/main.1ae75f40.chunk.js",
+    "main.js.map": "/facebook-killer/static/js/main.1ae75f40.chunk.js.map",
+    "runtime-main.js": "/facebook-killer/static/js/runtime-main.906640c6.js",
+    "runtime-main.js.map": "/facebook-killer/static/js/runtime-main.906640c6.js.map",
+    "static/js/3.2f84aa3b.chunk.js": "/facebook-killer/static/js/3.2f84aa3b.chunk.js",
+    "static/js/3.2f84aa3b.chunk.js.map": "/facebook-killer/static/js/3.2f84aa3b.chunk.js.map",
+    "static/css/4.1542fb3a.chunk.css": "/facebook-killer/static/css/4.1542fb3a.chunk.css",
+    "static/js/4.9018ebd0.chunk.js": "/facebook-killer/static/js/4.9018ebd0.chunk.js",
+    "static/js/4.9018ebd0.chunk.js.map": "/facebook-killer/static/js/4.9018ebd0.chunk.js.map",
+    "static/css/5.6e037bec.chunk.css": "/facebook-killer/static/css/5.6e037bec.chunk.css",
+    "static/js/5.1454ea5f.chunk.js": "/facebook-killer/static/js/5.1454ea5f.chunk.js",
+    "static/js/5.1454ea5f.chunk.js.map": "/facebook-killer/static/js/5.1454ea5f.chunk.js.map",
+    "static/css/6.5f9107e9.chunk.css": "/facebook-killer/static/css/6.5f9107e9.chunk.css",
+    "static/js/6.0b21b8ca.chunk.js": "/facebook-killer/static/js/6.0b21b8ca.chunk.js",
+    "static/js/6.0b21b8ca.chunk.js.map": "/facebook-killer/static/js/6.0b21b8ca.chunk.js.map",
+    "static/css/7.c7376355.chunk.css": "/facebook-killer/static/css/7.c7376355.chunk.css",
+    "static/js/7.05fb1d7a.chunk.js": "/facebook-killer/static/js/7.05fb1d7a.chunk.js",
+    "static/js/7.05fb1d7a.chunk.js.map": "/facebook-killer/static/js/7.05fb1d7a.chunk.js.map",
+    "index.html": "/facebook-killer/index.html",
+    "precache-manifest.fae254a36c3bafbd12b85463fc6c2e8e.js": "/facebook-killer/precache-manifest.fae254a36c3bafbd12b85463fc6c2e8e.js",
+    "service-worker.js": "/facebook-killer/service-worker.js",
+    "static/css/4.1542fb3a.chunk.css.map": "/facebook-killer/static/css/4.1542fb3a.chunk.css.map",
+    "static/css/5.6e037bec.chunk.css.map": "/facebook-killer/static/css/5.6e037bec.chunk.css.map",
+    "static/css/6.5f9107e9.chunk.css.map": "/facebook-killer/static/css/6.5f9107e9.chunk.css.map",
+    "static/css/7.c7376355.chunk.css.map": "/facebook-killer/static/css/7.c7376355.chunk.css.map",
+    "static/css/main.150f7847.chunk.css.map": "/facebook-killer/static/css/main.150f7847.chunk.css.map",
+    "static/js/3.2f84aa3b.chunk.js.LICENSE.txt": "/facebook-killer/static/js/3.2f84aa3b.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/facebook-killer/static/media/logo.5d5d9eef.svg",
+    "static/media/preloader.svg": "/facebook-killer/static/media/preloader.468c5121.svg",
+    "static/media/user.jpeg": "/facebook-killer/static/media/user.ba9fc42f.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.906640c6.js",
+    "static/js/3.2f84aa3b.chunk.js",
+    "static/css/main.150f7847.chunk.css",
+    "static/js/main.1ae75f40.chunk.js"
+  ]
+}
